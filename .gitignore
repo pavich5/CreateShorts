@@ -88,3 +88,15 @@ dashboard/public/fonts/Impact.ttf
 
 # Upstream PyPI release workflow does not belong to this repository
 .github/workflows/publish-cli.yml
+
+# Private Codex host bridge and account/runtime files
+.codex/
+.aws/
+openshorts_codex_bridge.py
+createshorts_codex_bridge.py
+bridge.env
+codex-bridge*.plist
+codex-worker/
+/Start CreateShorts.command
+/Stop CreateShorts.command
+/bin/createshorts-desktop-launcher
