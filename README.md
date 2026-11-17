@@ -11,6 +11,28 @@ Upload a video or paste a link, let AI choose the moments, then preview and edit
 
 ## Screenshots
 
+Real completed clips in the local workspace, from the video library to the editor.
+
+**Video library with generated clips**
+
+![Real video clips in the CreateShorts library](docs/screenshots/video-library.png)
+
+**Trim a clip and preview the selected range**
+
+![Trimming real footage in the CreateShorts video editor](docs/screenshots/editor-trim.png)
+
+**Choose caption styles with a live preview**
+
+![Caption styling and real video preview](docs/screenshots/editor-captions.png)
+
+**Edit the caption text**
+
+![Editing the transcript and caption text](docs/screenshots/editor-caption-text.png)
+
+**Add and style a hook**
+
+![Hook text, styling controls, and a real video preview](docs/screenshots/editor-hook.png)
+
 **Create clips and choose a caption style**
 
 ![CreateShorts clip creation workspace](docs/screenshots/create-clips.png)
@@ -18,8 +40,6 @@ Upload a video or paste a link, let AI choose the moments, then preview and edit
 **Workspace settings**
 
 ![CreateShorts workspace settings](docs/screenshots/workspace-settings.png)
-
-Screenshots show a fresh local workspace with an example AI provider configured.
 
 ## Get started
 
