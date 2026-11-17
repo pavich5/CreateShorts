@@ -27,6 +27,3 @@ Follow [SETUP.md](SETUP.md) to install the project, configure AI, run it with Do
 
 The dashboard opens at **http://localhost:5175**. AI services may need their own setup or API keys.
 
-## Credits and license
-
-Based on [OpenShorts](https://github.com/mutonby/openshorts). The core uses the [MIT License](LICENSE); the `cloud/` directory has its [own license](cloud/LICENSE). See [NOTICE](NOTICE) for upstream attribution.
