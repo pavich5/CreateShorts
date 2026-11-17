@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const evidence = path.resolve('../artifacts/e2e-2026-11-13');
+test('local navigation, settings, collections and validation', async ({ page }) => {
+  await page.goto('/#app');
+  await page.getByRole('button', { name: 'Settings', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Workspace settings' })).toBeVisible();
+  await expect(page.getByText('Your Codex account', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'All videos', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'All videos', exact: true })).toBeVisible();
+  const collection = page.getByRole('group', { name: 'Video collection' });
+  await collection.getByRole('button', { name: /^Generated/ }).click();
+  await collection.getByRole('button', { name: /^Saved/ }).click();
+  await collection.getByRole('button', { name: /^All videos/ }).click();
+  await page.getByRole('button', { name: 'Refresh local projects', exact: true }).click();
+  await expect(page.getByText('Loading projects…')).not.toBeVisible();
+  await page.getByRole('button', { name: 'Unassigned', exact: true }).click();
+  await page.goto('/#app?tab=history');
+  await expect(page.getByRole('region', { name: 'Generated shorts library' })).toBeVisible();
+  await page.getByRole('button', { name: 'Create clips', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Generate Clips', exact: true })).toBeDisabled();
+  await page.getByRole('button', { name: 'Video URL', exact: true }).click();
+  const url = page.getByPlaceholder('https://... paste a video link');
+  await url.fill('not-a-video-url');
+  expect(await url.evaluate(input => input.validity.typeMismatch)).toBe(true);
+  await page.getByRole('button', { name: 'Upload File', exact: true }).click();
+  await page.getByLabel('How many clips do you want?', { exact: true }).fill('0');
+  expect(await page.getByLabel('How many clips do you want?', { exact: true }).evaluate(input => input.validity.rangeUnderflow)).toBe(true);
+  await page.getByLabel('How many clips do you want?', { exact: true }).fill('16');
+  expect(await page.getByLabel('How many clips do you want?', { exact: true }).evaluate(input => input.validity.rangeOverflow)).toBe(true);
+  await page.getByLabel('How many clips do you want?', { exact: true }).fill('3');
+  await page.getByRole('button', { name: 'advanced options', exact: true }).click();
+  await expect(page.getByLabel('vertical layout')).toBeVisible();
+  await page.screenshot({ path: path.join(evidence, 'navigation-settings-validation.png'), fullPage: true });
+  fs.writeFileSync(path.join(evidence, 'navigation-dom.txt'), await page.locator('body').ariaSnapshot());
+});

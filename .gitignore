@@ -1,0 +1,90 @@
+# Video files
+*.mp4
+*.webm
+*.mov
+*.mkv
+
+# YOLO model
+*.pt
+
+# Python virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# Temporary files / runtime dirs
+temp_*
+uploads/
+downloads/
+videos/
+output/
+# Real-video E2E evidence includes downloaded videos, traces and local state.
+/artifacts/e2e-*/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Secrets
+.env
+
+# Generated metadata
+*_metadata.json
+
+# Cache dirs
+.cache/
+.config/
+# Multi-agent Skills
+.agents/
+.agent/
+.claude/
+# skills/ holds third-party installs (symlinks); our own published skill is versioned
+skills/*
+!skills/openshorts/
+skills-lock.json
+
+
+# Cloud env example kept local only (avoid leaking infra hints)
+.env.cloud.example
+.worktrees
+
+# Instrucciones locales con datos de infra (repo público)
+CLAUDE.local.md
+
+# Rust build output
+osrender/target/
+
+# Private installation data and generated evidence
+.env.*
+!.env.example
+.local/
+.campaigns.json
+.serena/
+.hallmark/
+.pytest_cache/
+artifacts/
+*.log
+*.pem
+*.key
+*.egg-info/
+wheelhouse.local/
+compose.local.yaml
+Dockerfile.local*
+Modelfile.local
+LOCAL-SETUP.txt
+Start OpenShorts.command
+Stop OpenShorts.command
+bin/openshorts-desktop-launcher
+docker-compose.override.yml
+
+# System fonts installed locally; public builds use bundled open fonts
+fonts/Arial*.ttf
+fonts/Comic Sans*.ttf
+fonts/Courier New*.ttf
+fonts/Impact.ttf
+dashboard/public/fonts/Arial*.ttf
+dashboard/public/fonts/Impact.ttf
+
+# Upstream PyPI release workflow does not belong to this repository
+.github/workflows/publish-cli.yml

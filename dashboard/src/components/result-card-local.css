@@ -1,0 +1,30 @@
+.local-clip-card { min-width:0; width:100%; max-width:320px; box-shadow:0 3px 14px rgb(15 23 42 / .05); border-radius:18px; transition:border-color .2s,box-shadow .2s; }
+.local-clip-stage { height:360px; background:#101827; position:relative; overflow:hidden; flex-shrink:0; }
+.local-clip-video { display:block; width:100%; height:100%; object-fit:contain; }
+.local-clip-badges { position:absolute; top:14px; left:14px; right:14px; display:flex; gap:8px; align-items:center; pointer-events:none; }
+.local-clip-number,.local-clip-score { display:inline-flex; align-items:center; gap:5px; border:1px solid rgb(255 255 255 / .2); border-radius:8px; background:rgb(15 23 42 / .85); color:#fff; padding:5px 9px; font:600 12px/1.3 var(--font-body); backdrop-filter:blur(8px); }
+.local-clip-score { margin-left:auto; }
+.local-clip-score b { color:#c7d2fe; }
+.local-clip-loading,.local-clip-error { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:#e2e8f0; padding:30px; text-align:center; font-size:14px; background:rgb(15 23 42 / .6); }
+.local-clip-loading { pointer-events:none; }
+.local-clip-error { z-index:3; background:#101827; }
+.local-clip-error span { font-size:13px; max-width:260px; color:#cbd5e1; }
+.local-clip-error button { display:inline-flex; gap:8px; align-items:center; background:#fff; color:#172238; font-weight:600; border-radius:8px; padding:10px 14px; margin-top:4px; }
+.local-clip-title { min-height:2.7em; font-size:16px; line-height:1.45; letter-spacing:-.015em; margin-bottom:10px; }
+.local-clip-content { gap:10px; padding:18px; }
+.local-clip-card:hover { box-shadow:0 6px 22px rgb(15 23 42 / .08); }
+.local-clip-details { margin-bottom:4px; }
+.local-clip-edit { min-height:44px; border-radius:10px; font-size:13px; font-weight:600; }
+.local-clip-save > button { min-height:42px; border-radius:10px; }
+.local-clip-copy .eyebrow { font:600 10px/1.3 var(--font-body); letter-spacing:.03em; }
+.local-clip-actions { display:grid; grid-template-columns:minmax(0,1fr); gap:10px; margin-top:auto; padding-top:12px; }
+.local-clip-actions > button { width:100%; min-height:42px; border-radius:10px; font-size:13px; }
+.local-clip-remove { grid-column:1 / -1; }
+.local-clip-action { min-height:40px; padding:9px 10px; text-transform:none; }
+.local-clip-download { grid-column:1 / -1; width:100%; min-height:44px; border-radius:9px; text-transform:none; font-weight:600; }
+.local-clip-download svg { color:currentColor; }
+@media (max-width:639px) { .local-clip-stage { height:360px; max-height:62vh; min-height:280px; } .local-clip-title { min-height:0; } }
+
+/* The entire preview toggles playback; no native toolbar is shown. */
+.local-clip-toggle { position:absolute; inset:0; z-index:2; border:0; background:transparent; cursor:pointer; }
+.local-clip-toggle:focus-visible { outline:2px solid #a5b4fc; outline-offset:-3px; }

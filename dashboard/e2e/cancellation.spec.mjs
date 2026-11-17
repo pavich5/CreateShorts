@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+import path from 'node:path';
+
+test('a real uploaded queued job can be stopped and a new source selected', async ({ page }) => {
+  test.skip(process.env.OPENSHORTS_REAL_E2E !== '1', 'Real source upload opt-in.');
+  const evidence = path.resolve('../artifacts/e2e-2026-11-13');
+  const source = process.env.OPENSHORTS_REAL_TEST_VIDEO || path.join(process.env.HOME, 'Downloads/Alex Hormozi The 4 Steps To Your First Dollars Tomorrow.mp4');
+  await page.goto('/#app');
+  await page.getByLabel('Category name', { exact: true }).fill('E2E cancellation 2026-11-13');
+  await page.locator('input[type=file]').setInputFiles(source);
+  await page.getByLabel('How many clips do you want?', { exact: true }).fill('1');
+  const submitted = page.waitForResponse(r => r.url().endsWith('/api/process') && r.request().method() === 'POST', { timeout: 180_000 });
+  await page.getByRole('button', { name: 'Generate Clips', exact: true }).click();
+  const response = await submitted;
+  expect(response.ok()).toBeTruthy();
+  const job = await response.json();
+  const sourcePanel = page.locator('details').filter({ hasText: 'Source video' });
+  await sourcePanel.locator('summary').click();
+  const video = sourcePanel.locator('video');
+  await expect.poll(() => video.evaluate(v => v.readyState)).toBeGreaterThanOrEqual(2);
+  const metadata = await video.evaluate(v => ({ duration: v.duration, width: v.videoWidth, height: v.videoHeight, source: v.currentSrc }));
+  expect(Math.abs(metadata.duration - 1566)).toBeLessThan(.1);
+  expect(metadata.width).toBe(1280);
+  expect(metadata.height).toBe(720);
+  await expect.poll(() => video.evaluate(v => v.currentTime)).toBeGreaterThan(.1);
+  fs.writeFileSync(path.join(evidence, 'source-browser-metadata.json'), JSON.stringify(metadata, null, 2));
+  await page.screenshot({ path: path.join(evidence, 'uploaded-source-playback.png'), fullPage: true });
+  const stopped = page.waitForResponse(r => r.url().includes(`/api/jobs/${job.job_id}/cancel`));
+  await page.getByRole('button', { name: 'Stop creating clips', exact: true }).click();
+  const cancellation = await stopped;
+  expect(cancellation.ok()).toBeTruthy();
+  await expect(page.getByRole('heading', { name: 'Turn a long video into great shorts.' })).toBeVisible();
+  const status = await (await page.request.get(`/api/status/${job.job_id}`)).json();
+  expect(status.status).toBe('cancelled');
+  fs.writeFileSync(path.join(evidence, 'cancelled-job.json'), JSON.stringify({ job, status }, null, 2));
+  await page.screenshot({ path: path.join(evidence, 'cancelled-returned-to-create.png'), fullPage: true });
+});

@@ -1,0 +1,45 @@
+/* Local editing studio: readable typography and a high-contrast light palette. */
+:root {
+  --rgb-paper: 244 246 251;
+  --rgb-paper-2: 255 255 255;
+  --rgb-paper-3: 235 239 247;
+  --rgb-ink: 23 34 56;
+  --rgb-ink-2: 51 65 85;
+  --rgb-muted: 95 110 133;
+  --rgb-accent: 79 70 229;
+  --rgb-accent-ink: 255 255 255;
+  --rgb-accent-2: 124 58 237;
+  --rgb-ok: 15 118 85;
+  --rgb-danger: 190 18 60;
+  --rgb-warn: 161 98 7;
+  --color-paper: rgb(var(--rgb-paper));
+  --color-paper-2: rgb(var(--rgb-paper-2));
+  --color-paper-3: rgb(var(--rgb-paper-3));
+  --color-ink: rgb(var(--rgb-ink));
+  --color-ink-2: rgb(var(--rgb-ink-2));
+  --color-muted: rgb(var(--rgb-muted));
+  --color-rule: #dfe5ef;
+  --color-rule-2: #cbd5e1;
+  --rule-blueprint: #e8edf5;
+  --color-accent: rgb(var(--rgb-accent));
+  --color-accent-ink: rgb(var(--rgb-accent-ink));
+  --color-accent-2: rgb(var(--rgb-accent-2));
+  --color-glow: rgb(var(--rgb-accent) / 0.15);
+  --color-paper-emit: transparent;
+  --color-focus: rgb(var(--rgb-accent));
+  --color-ok: rgb(var(--rgb-ok));
+  --color-danger: rgb(var(--rgb-danger));
+  --color-warn: rgb(var(--rgb-warn));
+  --font-body: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font-body);
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --text-display: clamp(2rem, 3vw, 3rem);
+  --tracking-display: -0.035em;
+  --tracking-micro: 0.025em;
+  --radius-card: 16px;
+  --radius-input: 10px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 160ms;
+  --dur-reveal: 240ms;
+  --dur-pulse: 4s;
+}

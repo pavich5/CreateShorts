@@ -1,0 +1,36 @@
+.clip-preview { display:flex; flex-direction:column; min-width:0; min-height:0; padding:22px 24px; background:#f3f5fa; color:#172238; }
+.clip-preview-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:28px; margin-bottom:15px; font-size:12px; color:#53617a; flex-shrink:0; }
+.clip-preview-heading > span:first-child { display:flex; align-items:center; gap:8px; font-weight:600; }
+.clip-preview-stage { position:relative; display:flex; align-items:center; justify-content:center; height:360px; min-height:80px; background:#101522; border:1px solid #222b3d; border-radius:14px; overflow:hidden; isolation:isolate; }
+.clip-preview-stage > video { display:block; width:100%; height:100%; object-fit:contain; }
+.clip-preview-stage:fullscreen { height:100%; width:100%; border:0; border-radius:0; }
+.clip-preview-play { position:absolute; z-index:5; width:58px; height:58px; display:grid; place-items:center; padding-left:3px; border:1px solid #ffffff40; border-radius:50%; background:#111827a6; color:white; }
+.clip-preview-play:hover { background:#4f46e5; }
+.clip-preview-message { position:absolute; inset:0; z-index:6; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; background:#101522ed; color:#e2e8f0; font-size:13px; }
+.clip-preview-message button { padding:8px; color:#c7d2fe; text-decoration:underline; }
+.clip-preview-toolbar { display:flex; justify-content:space-between; align-items:center; gap:6px; padding:13px 0 10px; flex-shrink:0; }
+.clip-preview-toolbar > div { display:flex; gap:2px; }
+.clip-preview-toolbar button { display:grid; place-items:center; width:30px; height:32px; border-radius:7px; color:#48556d; }
+.clip-preview-toolbar button:hover { background:#e3e8f2; color:#4338ca; }
+.clip-preview-toolbar output { white-space:nowrap; font:12px var(--font-mono); color:#172238; font-variant-numeric:tabular-nums; }
+.clip-preview-toolbar output span { color:#7c889e; }
+.clip-preview button:disabled { opacity:.45; cursor:not-allowed; }
+.clip-preview button:focus-visible,.clip-preview input:focus-visible { outline:2px solid #818cf8; outline-offset:3px; }
+.clip-preview-timeline { flex-shrink:0; }
+.clip-preview-track { position:relative; height:30px; border:1px solid #dce2ed; border-radius:7px; background:repeating-linear-gradient(90deg,#e7ebf3 0,#e7ebf3 7px,#f3f5fa 7px,#f3f5fa 9px); }
+.clip-preview-selection { position:absolute; inset-block:0; border:2px solid #818cf8; border-radius:5px; background:#a5b4fc45; pointer-events:none; }
+.clip-preview-progress { position:absolute; left:0; top:0; bottom:0; background:#818cf820; border-right:2px solid #4f46e5; pointer-events:none; }
+.clip-preview-track input { position:absolute; inset:0; width:100%; height:100%; margin:0; cursor:pointer; appearance:none; background:transparent; border-radius:6px; }
+.clip-preview-track input::-webkit-slider-thumb { appearance:none; width:10px; height:36px; border:2px solid white; border-radius:4px; background:#4f46e5; box-shadow:0 1px 5px #312e8150; }
+.clip-preview-track input::-moz-range-thumb { width:7px; height:32px; border:2px solid white; border-radius:4px; background:#4f46e5; }
+.clip-preview-ticks { display:flex; justify-content:space-between; margin-top:8px; font:10px var(--font-mono); color:#7b879b; font-variant-numeric:tabular-nums; }
+.clip-preview-stage .broll-editor-player { height:100%; width:auto; max-width:100%; margin:0; border-radius:0; }
+.remotion-preview-picture { width:100%; height:100%; }
+.clip-preview-detail { height:48px; flex-shrink:0; display:flex; flex-direction:column; justify-content:center; }
+.clip-preview-detail > p { display:flex; align-items:center; gap:6px; font-size:11px; color:#78849a; }
+.clip-preview-detail .broll-editor-timeline { margin:0; }
+/* Standalone dialogs use the same frame without a portrait-only outer crop. */
+.local-hook-preview:has(.clip-preview) { width:100%; aspect-ratio:auto; border:0; border-radius:0; background:transparent; }
+.caption-editor-preview > .clip-preview { height:100%; }
+.clip-preview:fullscreen { width:100%; height:100dvh; padding:20px; background:#f3f5fa; }
+.clip-preview:fullscreen .clip-preview-stage { flex:1; height:auto; }

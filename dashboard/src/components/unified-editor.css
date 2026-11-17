@@ -1,0 +1,151 @@
+.unified-editor-page { position:fixed; inset:0; z-index:100; height:100dvh; display:flex; flex-direction:column; background:var(--color-paper,#fff); color:var(--color-ink,#172238); outline:none; }
+.unified-editor-page > div:first-of-type > .eyebrow { max-width:calc(100% - 50px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.local-modal .unified-editor-body { padding:0; min-height:0; overflow:hidden; }
+.unified-editor-workspace { display:grid; grid-template-columns:200px minmax(0,1fr); flex:1; min-height:0; }
+.unified-editor-sidebar { display:flex; flex-direction:column; gap:18px; padding:24px 14px 18px; background:var(--color-paper-2,#f8fafc); border-right:1px solid var(--color-rule,#e2e8f0); min-height:0; overflow-y:auto; }
+.unified-editor-nav-label { margin:0 12px; font-size:10px; font-weight:650; text-transform:uppercase; letter-spacing:.1em; color:var(--color-muted,#64748b); }
+.unified-editor-tabs { display:flex; flex-direction:column; gap:5px; }
+.unified-editor-tabs button { display:flex; align-items:center; gap:10px; text-align:left; padding:12px; border:1px solid transparent; border-radius:10px; color:var(--color-muted,#64748b); transition:background .15s,color .15s; }
+.unified-editor-tabs button:hover { background:var(--color-paper-3,#eef2f6); color:var(--color-ink,#172238); }
+.unified-editor-tabs button[aria-selected=true] { color:#5b4b9b; border-color:#e0d9f5; background:#eeeaf8; }
+.unified-editor-tabs button:focus-visible { outline:2px solid #9483c9; outline-offset:2px; }
+.unified-editor-tabs svg { flex-shrink:0; }
+.unified-editor-tabs strong { display:block; font-size:12px; font-weight:600; }
+.unified-editor-tabs small { display:block; margin-top:3px; font-size:10px; opacity:.75; }
+.unified-editor-sidebar-help { margin:auto 12px 0; padding-top:24px; font-size:11px; line-height:1.6; color:var(--color-muted,#64748b); }
+.unified-editor-done { display:none; width:100%; padding:10px; border:1px solid var(--color-rule,#e2e8f0); border-radius:8px; font-size:12px; }
+.unified-editor-main { min-width:0; min-height:0; overflow-y:auto; background:var(--color-paper,#fff); }
+.unified-editor-section-heading { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:22px 26px 18px; border-bottom:1px solid var(--color-rule,#e2e8f0); }
+.unified-editor-section-heading h3 { color:var(--color-ink,#172238); font-size:17px; font-weight:650; }
+.unified-editor-section-heading p { margin-top:5px; font-size:12px; color:var(--color-muted,#64748b); line-height:1.5; }
+.unified-editor-section-heading > span { display:flex; align-items:center; gap:6px; flex-shrink:0; color:#52715c; font-size:11px; }
+.unified-editor-error { display:flex; gap:8px; margin:16px 24px; padding:12px; border:1px solid #fecaca; border-radius:8px; font-size:12px; line-height:1.5; background:#fff1f2; color:#b91c1c; }
+.unified-editor-panel[hidden] { display:none !important; }
+.unified-editor-page .modal-embedded { max-width:none; border-radius:0; overflow:visible; }
+.unified-editor-panel .modal-embedded-header { display:none; }
+.unified-editor-panel .modal-embedded-body { overflow:visible; }
+.unified-editor-panel .modal-embedded-footer { position:sticky; bottom:0; background:var(--color-paper,#fff); z-index:5; }
+.unified-editor-panel .ai-editor-modal-body { padding:0; }
+.unified-editor-panel .ai-editor-layout { height:auto; min-height:500px; }
+.unified-editor-panel .ai-preview-panel, .unified-editor-panel .ai-instruction-panel { overflow:visible; }
+.unified-editor-panel .ai-preview-stage { height:clamp(200px,42vh,400px); }
+.unified-editor-panel .broll-editor-player { width:min(100%,300px,calc(max(180px,100dvh - 400px) * var(--broll-ratio,.5625))); max-height:none; }
+.unified-editor-panel .broll-editor { grid-template-columns:minmax(230px,.85fr) minmax(0,1.15fr); }
+.unified-editor-auto { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:18px 26px; border-top:1px solid var(--color-rule,#e2e8f0); font-size:12px; color:var(--color-muted,#64748b); }
+.unified-editor-auto button { flex-shrink:0; padding:9px 14px; }
+.unified-editor-loading { display:flex; min-height:300px; align-items:center; justify-content:center; gap:10px; color:var(--color-muted,#64748b); }
+.unified-editor-loading-error { max-width:460px; padding:30px; margin:auto; font-size:14px; }
+@media(max-width:900px) { .unified-editor-workspace { grid-template-columns:165px minmax(0,1fr); } .unified-editor-sidebar { padding-inline:8px; } .unified-editor-tabs button { gap:8px; padding:10px 8px; } .unified-editor-panel .broll-editor { grid-template-columns:1fr; } .unified-editor-panel .broll-editor-preview { position:static; } .unified-editor-panel .broll-editor-player { width:190px; } .unified-editor-section-heading { padding:18px; } }
+@media(max-width:639px) {  .unified-editor-workspace { display:flex; flex-direction:column; } .unified-editor-sidebar { flex:none; padding:9px 10px; border-right:0; border-bottom:1px solid var(--color-rule,#e2e8f0); overflow:visible; } .unified-editor-nav-label,.unified-editor-sidebar-help,.unified-editor-done { display:none; } .unified-editor-tabs { flex-direction:row; gap:5px; overflow-x:auto; padding:2px; } .unified-editor-tabs button { flex-shrink:0; padding:9px 11px; gap:7px; } .unified-editor-tabs small { display:none; } .unified-editor-tabs strong { font-size:11px; } .unified-editor-tabs svg { width:15px; height:15px; } .unified-editor-main { flex:1; } .unified-editor-section-heading { align-items:flex-start; gap:8px; padding:16px; } .unified-editor-section-heading > span { max-width:95px; font-size:10px; } .unified-editor-panel .ai-editor-layout { display:block; min-height:0; } .unified-editor-panel .ai-preview-panel { border-right:0; border-bottom:1px solid var(--color-rule); padding:16px; } .unified-editor-panel .ai-instruction-panel { padding:20px 16px; } .unified-editor-panel .ai-preview-stage { height:240px; } .unified-editor-panel .broll-editor-player { width:180px; } .unified-editor-auto { padding:16px; } }
+
+.unified-editor-page-header { display:flex; align-items:center; gap:28px; min-height:78px; padding:14px 26px; border-bottom:1px solid var(--color-rule,#e2e8f0); flex-shrink:0; background:var(--color-paper,#fff); }
+.unified-editor-back { display:flex; align-items:center; gap:8px; padding:9px 12px; border:1px solid var(--color-rule,#e2e8f0); border-radius:8px; font-size:12px; color:var(--color-muted,#64748b); flex-shrink:0; }
+.unified-editor-page-title { display:flex; align-items:center; gap:12px; min-width:0; }
+.unified-editor-home { display:grid; place-items:center; width:38px; height:38px; padding:0; border:0; border-radius:10px; background:#eeeaf8; color:#6a58a4; flex-shrink:0; cursor:pointer; }
+.unified-editor-home:hover { background:#e3dcf4; }
+.unified-editor-home:focus-visible { outline:2px solid #6a58a4; outline-offset:3px; }
+.unified-editor-home:disabled { opacity:.5; cursor:default; }
+.unified-editor-page-title > div { min-width:0; }
+.unified-editor-page-title p { font-size:9px; font-weight:650; letter-spacing:.12em; color:var(--color-muted,#64748b); margin-bottom:3px; }
+.unified-editor-page-title h1 { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:15px; font-weight:600; }
+.unified-editor-page-state { margin-left:auto; font-size:11px; color:var(--color-muted,#64748b); white-space:nowrap; }
+.unified-editor-unsaved { margin:16px 24px; padding:14px 16px; border:1px solid #e8cf99; border-radius:8px; background:#fff9eb; color:#785821; font-size:12px; line-height:1.6; }
+.unified-editor-unsaved > div { display:flex; gap:12px; margin-top:10px; }
+.unified-editor-unsaved button { padding:5px 9px; border:1px solid #e8cf99; border-radius:5px; }
+.unified-editor-page .ai-editor-layout { min-height:calc(100dvh - 225px); }
+.unified-editor-page .ai-preview-stage { height:clamp(260px,52vh,580px); }
+@media(min-width:1440px) { .unified-editor-workspace { grid-template-columns:220px minmax(0,1fr); } .unified-editor-panel .broll-editor { grid-template-columns:minmax(300px,1fr) minmax(0,1fr); } }
+@media(max-width:639px) { .unified-editor-page-header { min-height:65px; padding:10px 14px; gap:14px; } .unified-editor-page-title > span,.unified-editor-page-state { display:none; } .unified-editor-page-title h1 { font-size:13px; } .unified-editor-back { font-size:11px; padding:8px; } .unified-editor-back > span { display:none; } .unified-editor-page .ai-editor-layout { min-height:0; } .unified-editor-page .ai-preview-stage { height:240px; } .unified-editor-unsaved { margin:12px 16px; } }
+
+/* The picture stays in its own pane; only the options scroll. This also
+   keeps playback controls reachable while editing fields near the bottom. */
+.unified-editor-main { display:flex; flex-direction:column; overflow:hidden; }
+.unified-editor-section-heading { flex-shrink:0; }
+.unified-editor-panel { display:flex; flex:1; flex-direction:column; min-height:0; overflow:hidden; }
+.unified-editor-page .modal-embedded { flex:1; min-height:0; overflow:hidden; }
+.unified-editor-panel .modal-embedded-body { min-height:0; overflow:hidden; }
+.unified-editor-panel .modal-embedded-footer { position:static; flex-shrink:0; }
+.unified-editor-page .ai-editor-layout { height:100%; min-height:0; align-items:stretch; }
+.unified-editor-panel .ai-preview-panel { min-height:0; overflow:auto; }
+.unified-editor-panel .ai-instruction-panel { min-height:0; overflow-y:auto; overscroll-behavior:contain; }
+.unified-editor-page .ai-preview-stage { height:clamp(140px,calc(100dvh - 390px),480px); }
+.unified-editor-panel .broll-editor { height:100%; min-height:0; grid-template-columns:minmax(180px,.85fr) minmax(0,1.15fr); align-items:stretch; }
+.unified-editor-panel .broll-editor-preview { position:relative; min-height:0; overflow-y:auto; padding-right:4px; }
+.unified-editor-panel .broll-editor-images { min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:2px 4px; }
+.unified-editor-panel .caption-editor-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); height:100%; min-height:0; align-items:stretch; }
+.unified-editor-panel .caption-editor-preview { position:relative; height:100%; max-height:none; min-height:0; aspect-ratio:auto; }
+.unified-editor-panel .caption-editor-options { min-height:0; overflow-y:auto; overscroll-behavior:contain; }
+.unified-editor-panel .local-hook-editor { height:100%; min-height:0; grid-template-columns:minmax(180px,.85fr) minmax(0,1.15fr); align-items:stretch; }
+.unified-editor-panel .local-hook-preview { position:relative; min-height:0; max-height:100%; aspect-ratio:auto; }
+.unified-editor-panel .local-hook-controls { min-height:0; overflow-y:auto; overscroll-behavior:contain; padding-right:4px; }
+.unified-editor-auto { flex-shrink:0; }
+.local-modal:has(.editor-unsaved-modal) { z-index:200; }
+.editor-unsaved-actions { display:flex; justify-content:flex-end; gap:9px; flex-wrap:wrap; }
+.editor-unsaved-actions button { padding:10px 14px; font-size:12px; }
+@media(max-width:767px) {
+  .unified-editor-section-heading { padding:12px 16px; }
+  .unified-editor-section-heading p { font-size:11px; }
+  .unified-editor-panel .ai-editor-layout,
+  .unified-editor-panel .caption-editor-layout,
+  .unified-editor-panel .broll-editor,
+  .unified-editor-panel .local-hook-editor { display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(150px,32vh) minmax(0,1fr); gap:12px; height:100%; min-height:0; }
+  .unified-editor-panel .ai-preview-panel { padding:10px 14px; overflow:hidden; border-right:0; border-bottom:1px solid var(--color-rule); }
+  .unified-editor-panel .ai-preview-heading,.unified-editor-panel .ai-timeline-ticks,.unified-editor-panel .ai-timeline > p { display:none; }
+  .unified-editor-page .ai-preview-stage { height:calc(100% - 65px); min-height:80px; border-radius:8px; }
+  .unified-editor-panel .ai-player-toolbar { padding:4px 0; }
+  .unified-editor-panel .ai-timeline-track { height:20px; }
+  .unified-editor-panel .ai-timeline-track input::-webkit-slider-thumb { height:24px; }
+  .unified-editor-panel .ai-instruction-panel { padding:14px 16px; }
+  .unified-editor-panel .broll-editor-preview { overflow:hidden; display:grid; grid-template-columns:minmax(90px,.6fr) minmax(0,1fr); grid-template-rows:1fr 25px 50px; column-gap:14px; }
+  .unified-editor-panel .broll-editor-player { grid-column:1; grid-row:1/-1; height:100%; width:auto; max-width:100%; }
+  .unified-editor-panel .broll-editor-playback { grid-column:2; margin:0; align-self:end; }
+  .unified-editor-panel .broll-editor-scrubber,.unified-editor-panel .broll-editor-timeline { grid-column:2; margin:0; }
+  .unified-editor-panel .broll-editor-help { display:none; }
+  .unified-editor-panel .caption-editor-preview,.unified-editor-panel .local-hook-preview { width:100%; height:100%; margin:0; }
+}
+
+/* One preview frame and one set of playback controls across all tools. */
+.unified-editor-panel .modal-embedded-body { padding:0; }
+.unified-editor-panel .ai-editor-layout,
+.unified-editor-panel .broll-editor,
+.unified-editor-panel .caption-editor-layout,
+.unified-editor-panel .local-hook-editor,
+.unified-editor-panel .voice-editor-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:0; height:100%; min-height:0; align-items:stretch; }
+.unified-editor-panel .clip-preview { height:100%; min-height:0; overflow:hidden; padding:22px 24px; border:0; border-right:1px solid var(--color-rule); border-radius:0; position:relative; aspect-ratio:auto; }
+.unified-editor-panel .clip-preview-stage { flex:1; height:auto; min-height:80px; }
+.unified-editor-panel .caption-editor-preview,
+.unified-editor-panel .local-hook-preview { background:transparent; border:0; border-radius:0; height:100%; min-height:0; max-height:none; aspect-ratio:auto; margin:0; overflow:hidden; }
+.unified-editor-panel .caption-editor-options,
+.unified-editor-panel .local-hook-controls,
+.unified-editor-panel .broll-editor-images,
+.unified-editor-panel .voice-editor-options { min-width:0; width:auto; padding:24px 26px; min-height:0; overflow-y:auto; overscroll-behavior:contain; }
+.unified-editor-panel .broll-editor-preview { display:flex; }
+.unified-editor-panel .clip-preview-stage .broll-editor-player { height:100%; width:auto; max-width:100%; border-radius:0; }
+.unified-editor-panel .broll-editor-timeline { margin-top:14px; flex-shrink:0; }
+.unified-editor-panel .broll-editor-help { display:none; }
+.voice-editor-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.voice-editor-options { padding:24px; }
+@media(max-width:767px) {
+  .unified-editor-panel .ai-editor-layout,
+  .unified-editor-panel .broll-editor,
+  .unified-editor-panel .caption-editor-layout,
+  .unified-editor-panel .local-hook-editor,
+  .unified-editor-panel .voice-editor-layout { grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(190px,38vh) minmax(0,1fr); }
+  .unified-editor-panel .clip-preview { padding:10px 14px; border-right:0; border-bottom:1px solid var(--color-rule); }
+  .unified-editor-panel .clip-preview-heading { margin-bottom:6px; min-height:22px; }
+  .unified-editor-panel .clip-preview-toolbar { padding:4px 0; }
+  .unified-editor-panel .clip-preview-ticks,.unified-editor-panel .clip-preview-timeline > p { display:none; }
+  .unified-editor-panel .clip-preview-track { height:20px; }
+  .unified-editor-panel .clip-preview-track input::-webkit-slider-thumb { height:24px; }
+  .unified-editor-panel .broll-editor-timeline { margin-top:6px; height:22px; min-height:22px; }
+  .unified-editor-panel .caption-editor-options,.unified-editor-panel .local-hook-controls,.unified-editor-panel .broll-editor-images,.unified-editor-panel .voice-editor-options { padding:16px; }
+}
+@media(max-width:767px) {
+  .unified-editor-panel .clip-preview-detail { height:26px; }
+  .unified-editor-panel .clip-preview-detail > p { display:none; }
+  .unified-editor-panel .clip-preview-detail .broll-editor-timeline { margin:0; }
+}
+@media(min-width:768px) {
+  .unified-editor-panel .clip-preview-stage { flex:none; height:clamp(80px,calc(100dvh - 510px),480px); }
+}
+.clip-preview .broll-editor-preview-toggle > span { width:58px; height:58px; border:1px solid #ffffff40; border-radius:50%; background:#111827a6; }

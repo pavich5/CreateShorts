@@ -1,0 +1,532 @@
+[
+  {
+    "maxWords": 1,
+    "utterances": [
+      {
+        "text": "Short phrase with four next longerword silence end",
+        "start_time": 100,
+        "end_time": 2800,
+        "words": [
+          {
+            "text": "Short",
+            "start_time": 100,
+            "end_time": 300
+          },
+          {
+            "text": "phrase",
+            "start_time": 350,
+            "end_time": 700
+          },
+          {
+            "text": "with",
+            "start_time": 800,
+            "end_time": 900
+          },
+          {
+            "text": "four",
+            "start_time": 950,
+            "end_time": 1100
+          },
+          {
+            "text": "next",
+            "start_time": 1250,
+            "end_time": 1400
+          },
+          {
+            "text": "longerword",
+            "start_time": 1500,
+            "end_time": 1700
+          },
+          {
+            "text": "silence",
+            "start_time": 2250,
+            "end_time": 2400
+          },
+          {
+            "text": "end",
+            "start_time": 2600,
+            "end_time": 2800
+          }
+        ]
+      },
+      {
+        "text": "Separate utterance",
+        "start_time": 2850,
+        "end_time": 3300,
+        "words": [
+          {
+            "text": "Separate",
+            "start_time": 2850,
+            "end_time": 3000
+          },
+          {
+            "text": "utterance",
+            "start_time": 3050,
+            "end_time": 3300
+          }
+        ]
+      }
+    ],
+    "captions": [
+      {
+        "text": "Short",
+        "startMs": 100,
+        "endMs": 300,
+        "utteranceId": 0
+      },
+      {
+        "text": "phrase",
+        "startMs": 350,
+        "endMs": 700,
+        "utteranceId": 0
+      },
+      {
+        "text": "with",
+        "startMs": 800,
+        "endMs": 900,
+        "utteranceId": 0
+      },
+      {
+        "text": "four",
+        "startMs": 950,
+        "endMs": 1100,
+        "utteranceId": 0
+      },
+      {
+        "text": "next",
+        "startMs": 1250,
+        "endMs": 1400,
+        "utteranceId": 0
+      },
+      {
+        "text": "longerword",
+        "startMs": 1500,
+        "endMs": 1700,
+        "utteranceId": 0
+      },
+      {
+        "text": "silence",
+        "startMs": 2250,
+        "endMs": 2400,
+        "utteranceId": 0
+      },
+      {
+        "text": "end",
+        "startMs": 2600,
+        "endMs": 2800,
+        "utteranceId": 0
+      },
+      {
+        "text": "Separate",
+        "startMs": 2850,
+        "endMs": 3000,
+        "utteranceId": 1
+      },
+      {
+        "text": "utterance",
+        "startMs": 3050,
+        "endMs": 3300,
+        "utteranceId": 1
+      }
+    ],
+    "duration": 4,
+    "events": [
+      {
+        "start": 0.1,
+        "end": 0.3,
+        "text": "Short",
+        "active": 0,
+        "words": [
+          "Short"
+        ]
+      },
+      {
+        "start": 0.35,
+        "end": 0.7,
+        "text": "phrase",
+        "active": 0,
+        "words": [
+          "phrase"
+        ]
+      },
+      {
+        "start": 0.8,
+        "end": 0.9,
+        "text": "with",
+        "active": 0,
+        "words": [
+          "with"
+        ]
+      },
+      {
+        "start": 0.95,
+        "end": 1.1,
+        "text": "four",
+        "active": 0,
+        "words": [
+          "four"
+        ]
+      },
+      {
+        "start": 1.25,
+        "end": 1.4,
+        "text": "next",
+        "active": 0,
+        "words": [
+          "next"
+        ]
+      },
+      {
+        "start": 1.5,
+        "end": 1.7,
+        "text": "longerword",
+        "active": 0,
+        "words": [
+          "longerword"
+        ]
+      },
+      {
+        "start": 2.25,
+        "end": 2.4,
+        "text": "silence",
+        "active": 0,
+        "words": [
+          "silence"
+        ]
+      },
+      {
+        "start": 2.6,
+        "end": 2.8,
+        "text": "end",
+        "active": 0,
+        "words": [
+          "end"
+        ]
+      },
+      {
+        "start": 2.85,
+        "end": 3.0,
+        "text": "Separate",
+        "active": 0,
+        "words": [
+          "Separate"
+        ]
+      },
+      {
+        "start": 3.05,
+        "end": 3.3,
+        "text": "utterance",
+        "active": 0,
+        "words": [
+          "utterance"
+        ]
+      }
+    ]
+  },
+  {
+    "maxWords": 4,
+    "utterances": [
+      {
+        "text": "Short phrase with four next longerword silence end",
+        "start_time": 100,
+        "end_time": 2800,
+        "words": [
+          {
+            "text": "Short",
+            "start_time": 100,
+            "end_time": 300
+          },
+          {
+            "text": "phrase",
+            "start_time": 350,
+            "end_time": 700
+          },
+          {
+            "text": "with",
+            "start_time": 800,
+            "end_time": 900
+          },
+          {
+            "text": "four",
+            "start_time": 950,
+            "end_time": 1100
+          },
+          {
+            "text": "next",
+            "start_time": 1250,
+            "end_time": 1400
+          },
+          {
+            "text": "longerword",
+            "start_time": 1500,
+            "end_time": 1700
+          },
+          {
+            "text": "silence",
+            "start_time": 2250,
+            "end_time": 2400
+          },
+          {
+            "text": "end",
+            "start_time": 2600,
+            "end_time": 2800
+          }
+        ]
+      },
+      {
+        "text": "Separate utterance",
+        "start_time": 2850,
+        "end_time": 3300,
+        "words": [
+          {
+            "text": "Separate",
+            "start_time": 2850,
+            "end_time": 3000
+          },
+          {
+            "text": "utterance",
+            "start_time": 3050,
+            "end_time": 3300
+          }
+        ]
+      }
+    ],
+    "captions": [
+      {
+        "text": "Short",
+        "startMs": 100,
+        "endMs": 300,
+        "utteranceId": 0
+      },
+      {
+        "text": "phrase",
+        "startMs": 350,
+        "endMs": 700,
+        "utteranceId": 0
+      },
+      {
+        "text": "with",
+        "startMs": 800,
+        "endMs": 900,
+        "utteranceId": 0
+      },
+      {
+        "text": "four",
+        "startMs": 950,
+        "endMs": 1100,
+        "utteranceId": 0
+      },
+      {
+        "text": "next",
+        "startMs": 1250,
+        "endMs": 1400,
+        "utteranceId": 0
+      },
+      {
+        "text": "longerword",
+        "startMs": 1500,
+        "endMs": 1700,
+        "utteranceId": 0
+      },
+      {
+        "text": "silence",
+        "startMs": 2250,
+        "endMs": 2400,
+        "utteranceId": 0
+      },
+      {
+        "text": "end",
+        "startMs": 2600,
+        "endMs": 2800,
+        "utteranceId": 0
+      },
+      {
+        "text": "Separate",
+        "startMs": 2850,
+        "endMs": 3000,
+        "utteranceId": 1
+      },
+      {
+        "text": "utterance",
+        "startMs": 3050,
+        "endMs": 3300,
+        "utteranceId": 1
+      }
+    ],
+    "duration": 4,
+    "events": [
+      {
+        "start": 0.1,
+        "end": 0.3,
+        "text": "Short phrase with four",
+        "active": 0,
+        "words": [
+          "Short",
+          "phrase",
+          "with",
+          "four"
+        ]
+      },
+      {
+        "start": 0.3,
+        "end": 0.35,
+        "text": "Short phrase with four",
+        "active": null,
+        "words": [
+          "Short",
+          "phrase",
+          "with",
+          "four"
+        ],
+        "revealed": 0
+      },
+      {
+        "start": 0.35,
+        "end": 0.7,
+        "text": "Short phrase with four",
+        "active": 1,
+        "words": [
+          "Short",
+          "phrase",
+          "with",
+          "four"
+        ]
+      },
+      {
+        "start": 0.7,
+        "end": 0.8,
+        "text": "Short phrase with four",
+        "active": null,
+        "words": [
+          "Short",
+          "phrase",
+          "with",
+          "four"
+        ],
+        "revealed": 1
+      },
+      {
+        "start": 0.8,
+        "end": 0.9,
+        "text": "Short phrase with four",
+        "active": 2,
+        "words": [
+          "Short",
+          "phrase",
+          "with",
+          "four"
+        ]
+      },
+      {
+        "start": 0.9,
+        "end": 0.95,
+        "text": "Short phrase with four",
+        "active": null,
+        "words": [
+          "Short",
+          "phrase",
+          "with",
+          "four"
+        ],
+        "revealed": 2
+      },
+      {
+        "start": 0.95,
+        "end": 1.1,
+        "text": "Short phrase with four",
+        "active": 3,
+        "words": [
+          "Short",
+          "phrase",
+          "with",
+          "four"
+        ]
+      },
+      {
+        "start": 1.25,
+        "end": 1.4,
+        "text": "next longerword silence",
+        "active": 0,
+        "words": [
+          "next",
+          "longerword",
+          "silence"
+        ]
+      },
+      {
+        "start": 1.4,
+        "end": 1.5,
+        "text": "next longerword silence",
+        "active": null,
+        "words": [
+          "next",
+          "longerword",
+          "silence"
+        ],
+        "revealed": 0
+      },
+      {
+        "start": 1.5,
+        "end": 1.7,
+        "text": "next longerword silence",
+        "active": 1,
+        "words": [
+          "next",
+          "longerword",
+          "silence"
+        ]
+      },
+      {
+        "start": 2.25,
+        "end": 2.4,
+        "text": "next longerword silence",
+        "active": 2,
+        "words": [
+          "next",
+          "longerword",
+          "silence"
+        ]
+      },
+      {
+        "start": 2.6,
+        "end": 2.8,
+        "text": "end",
+        "active": 0,
+        "words": [
+          "end"
+        ]
+      },
+      {
+        "start": 2.85,
+        "end": 3.0,
+        "text": "Separate utterance",
+        "active": 0,
+        "words": [
+          "Separate",
+          "utterance"
+        ]
+      },
+      {
+        "start": 3.0,
+        "end": 3.05,
+        "text": "Separate utterance",
+        "active": null,
+        "words": [
+          "Separate",
+          "utterance"
+        ],
+        "revealed": 0
+      },
+      {
+        "start": 3.05,
+        "end": 3.3,
+        "text": "Separate utterance",
+        "active": 1,
+        "words": [
+          "Separate",
+          "utterance"
+        ]
+      }
+    ]
+  }
+]
